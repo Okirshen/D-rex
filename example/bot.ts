@@ -1,6 +1,6 @@
 // deno run --allow-net --allow-env --allow-read bot.ts
 import 'https://deno.land/x/dotenv/load.ts';
-import { app, Intents, type } from '../mod.ts';
+import { app, Intents, type } from 'https://deno.land/x/drex/mod.ts';
 
 const client = app(['~', '^']);
 
