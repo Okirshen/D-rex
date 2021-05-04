@@ -4,11 +4,11 @@ import type { Message } from './deps.ts';
  * command type
  * @interface
  */
-export interface Command {
+export interface CustomCommand {
 	name: string;
 	aliases?: string[];
 	params?: Param[];
-	handler: (msg: Message, params: { [key: string]: string }) => void;
+	handler: (message: Message, params: { [key: string]: string }) => void;
 }
 
 /**
@@ -30,3 +30,5 @@ export enum type {
 	Member = 'MEMBER',
 	String = 'STRING',
 }
+
+export type Hook = (message: Message) => void;

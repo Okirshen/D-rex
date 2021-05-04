@@ -1,4 +1,4 @@
-import type { Command } from './types.ts';
+import type { CustomCommand } from './types.ts';
 import { type } from './types.ts';
 import type { Member } from './deps.ts';
 
@@ -12,7 +12,7 @@ const error = (type: string, name: string) => {
  * @param args - args to parse
  * @returns parsed args
  */
-export const _parse = (command: Command, args: string[]) => {
+export const _parse = (command: CustomCommand, args: string[]) => {
 	let out: { [key: string]: string | number | { error: string } } = {};
 	command.params?.forEach((arg, i) => {
 		if (args.length - 2 >= i) {
