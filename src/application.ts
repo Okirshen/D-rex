@@ -81,6 +81,8 @@ export class Application {
 									}
 								}
 								if (!hasErrors) command.handler(message, args);
+							} else {
+								command.handler(message, {});
 							}
 						}
 						break;
