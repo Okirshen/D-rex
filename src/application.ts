@@ -41,8 +41,6 @@ export class Application {
 
 		this.client.on('messageCreate', (message: Message): void => {
 			if (message.author.id !== this.client.user?.id) {
-				console.log(this.client.user?.id);
-
 				for (const hook of this._hooks) {
 					hook(message);
 				}
@@ -81,6 +79,8 @@ export class Application {
 									}
 								}
 								if (!hasErrors) command.handler(message, args);
+							} else {
+								command.handler(message, {});
 							}
 						}
 						break;
